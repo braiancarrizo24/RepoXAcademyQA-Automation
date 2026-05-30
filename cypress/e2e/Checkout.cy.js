@@ -33,4 +33,17 @@ describe('Checkouts',()=>{
 
   })
 
+  it('Checkout sin completar campos obligatorios', () => {
+    agregarProducto('sauce-labs-backpack')
+
+    
+    cy.get('[data-test="shopping-cart-link"]').click()
+    cy.get('[data-test="checkout"]').click()
+    cy.get('[data-test="continue"]').click()
+    cy.get('.error-message-container')
+    cy.get('[data-test="error"]')
+    .should('be.visible')
+    .and('contain','Error: First Name is required')
+    
+  })
 })
