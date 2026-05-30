@@ -17,4 +17,21 @@ describe ('Carrito de compras sauce demo',() => {
         
 
     })
+
+    it('Agregar múltiples productos y verificar contador',()=>{
+      
+        cy.get('[data-test="username"]').type('standard_user')
+        cy.get('[data-test="password"]').type('secret_sauce')
+        cy.get('[data-test="login-button"]').click()
+        cy.get('[data-test="item-4-title-link"] > [data-test="inventory-item-name"]')
+        cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
+        cy.get('[data-test="item-0-title-link"] > [data-test="inventory-item-name"]')
+        cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click()
+        cy.get('[data-test="item-2-title-link"] > [data-test="inventory-item-name"]')
+        cy.get('[data-test="add-to-cart-sauce-labs-onesie"]').click()
+        cy.get('[data-test="shopping-cart-link"]')
+        cy.get('[data-test="shopping-cart-badge"]')
+
+
+    })
 })
