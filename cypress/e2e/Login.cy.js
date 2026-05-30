@@ -51,6 +51,7 @@ describe ('Login Sauce Demo', ()=>{
         cy.get('[data-test="login-button"]').click()
         cy.get('#react-burger-menu-btn').click()
         cy.get('[data-test="logout-sidebar-link"]').click()
+        
     })
 
 })
